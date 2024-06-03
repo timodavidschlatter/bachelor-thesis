@@ -1,0 +1,6 @@
+{
+  "id": 16,
+  "name": "GW-Gewaesserschutzbereich",
+  "queryPostGis": "_query_",
+  "queryFelder": "Bereich"
+}

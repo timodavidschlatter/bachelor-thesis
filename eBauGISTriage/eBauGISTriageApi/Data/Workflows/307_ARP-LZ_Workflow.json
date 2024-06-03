@@ -1,0 +1,62 @@
+[
+  {
+    "WorkflowName": "307_ARP-LZ",
+    "Rules": [
+      {
+        "RuleName": "Strassenlaermbelastet",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "strassenlaermbelastet.QueryName == \"Strassenlaermbelastet\" && Utils.ResultExists(strassenlaermbelastet.Results.slb)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": { "Expression": "\"Strassenlärmbelastet\"" }
+          }
+        }
+      },
+      {
+        "RuleName": "Bahnlaermbelastet",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "bahnlaermbelastet.QueryName == \"Bahnlaermbelastet\" && Utils.ResultExists(bahnlaermbelastet.Results.blb)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": { "Expression": "\"Bahnlärmbelastet\"" }
+          }
+        }
+      },
+      {
+        "RuleName": "Bahnvibra1belastet",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "bahnvibra1belastet.QueryName == \"Bahnvibra1belastet\" && Utils.ResultExists(bahnvibra1belastet.Results.bel)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": { "Expression": "\"VIBRA 1\"" }
+          }
+        }
+      },
+      {
+        "RuleName": "Bahnvibra2belastet",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "bahnvibra2belastet.QueryName == \"Bahnvibra2belastet\" && Utils.ResultExists(bahnvibra2belastet.Results.bel)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": { "Expression": "\"VIBRA 2\"" }
+          }
+        }
+      },
+      {
+        "RuleName": "Schiesslärmbelastet",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "schiesslärmbelastet.QueryName == \"Schiesslärmbelastet\" && Utils.ResultExists(schiesslärmbelastet.Results.bel)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": { "Expression": "\"Schiesslärmbelastet\"" }
+          }
+        }
+      }
+    ]
+  }
+]

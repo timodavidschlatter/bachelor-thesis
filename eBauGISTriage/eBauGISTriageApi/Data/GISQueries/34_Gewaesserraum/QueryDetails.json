@@ -1,0 +1,6 @@
+{
+  "id": 34,
+  "name": "Gewaesserraum",
+  "queryPostGis": "_query_",
+  "queryFelder": "GWR"
+}

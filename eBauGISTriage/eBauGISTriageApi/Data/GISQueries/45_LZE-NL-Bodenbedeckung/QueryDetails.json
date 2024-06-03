@@ -1,0 +1,6 @@
+{
+  "id": 45,
+  "name": "LZE-NL-Bodenbedeckung",
+  "queryPostGis": "_query_",
+  "queryFelder": "Wert, Art, Code"
+}

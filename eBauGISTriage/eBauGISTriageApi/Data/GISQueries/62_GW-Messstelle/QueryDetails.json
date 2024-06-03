@@ -1,0 +1,6 @@
+{
+  "id": 62,
+  "name": "GW-Messstelle",
+  "queryPostGis": "_query_",
+  "queryFelder": "KL-Nr"
+}

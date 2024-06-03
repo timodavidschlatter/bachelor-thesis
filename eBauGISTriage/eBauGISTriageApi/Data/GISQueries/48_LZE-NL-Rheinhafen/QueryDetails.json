@@ -1,0 +1,6 @@
+{
+  "id": 48,
+  "name": "LZE-NL-Rheinhafen",
+  "queryPostGis": "_query_",
+  "queryFelder": "Zweckbestimmung, Inventarnummer"
+}

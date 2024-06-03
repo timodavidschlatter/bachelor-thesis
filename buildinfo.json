@@ -1,0 +1,9 @@
+{
+    "apis": [
+      {
+        "name": "eBauGISTriage",
+        "path": "eBauGISTriage/eBauGISTriageApi",
+        "outpath": "ebaugistriage"
+      }
+    ]
+  }

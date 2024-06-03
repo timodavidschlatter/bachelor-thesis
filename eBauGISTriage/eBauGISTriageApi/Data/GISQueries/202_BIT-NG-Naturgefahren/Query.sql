@@ -1,0 +1,1 @@
+SELECT resValue  FROM ge_bau.CheckGISCriterias4BitNgJSON('-json-');

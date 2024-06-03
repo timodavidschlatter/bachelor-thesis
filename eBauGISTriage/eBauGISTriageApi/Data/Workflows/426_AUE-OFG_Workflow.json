@@ -1,0 +1,20 @@
+[
+  {
+    "WorkflowName": "426_AUE-OFG",
+    "Rules": [
+      {
+        "RuleName": "Gewässer privat",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "gewässer_privat.QueryName == \"Gewässer privat\" && Utils.ResultExists(gewässer_privat.Results.gewässer)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"Gewässer=\" + Utils.ConvertArrayToString(gewässer_privat.Results.gewässer)"
+            }
+          }
+        }
+      }
+    ]
+  }
+]

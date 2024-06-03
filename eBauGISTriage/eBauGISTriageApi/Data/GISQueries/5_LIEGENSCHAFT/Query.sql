@@ -1,0 +1,7 @@
+SELECT
+    g.FLAECHENMASS, g.EGRIS_EGRID 
+FROM
+    av_ls.V_GRUNDSTUECK g  
+WHERE
+    ST_WITHIN(ST_POINTFROMTEXT('POINT (xxx yyy)',2056), g.geom )
+;

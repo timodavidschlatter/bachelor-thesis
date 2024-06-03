@@ -1,0 +1,123 @@
+[
+  {
+    "WorkflowName": "370_AUE-SEL",
+    "Rules": [
+      {
+        "RuleName": "GW-Grundwasserschutzzone",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "gw_grundwasserschutzzone.QueryName == \"GW-Grundwasserschutzzone\" && Utils.ResultExists(gw_grundwasserschutzzone.Results.bezeichnung)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"GWZ=\" +Utils.ConvertArrayToString(gw_grundwasserschutzzone.Results.bezeichnung)"
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "GW-Gewaesserschutzbereich",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "gw_gewaesserschutzbereich.QueryName == \"GW-Gewaesserschutzbereich\" && Utils.ResultExists(gw_gewaesserschutzbereich.Results.bereich)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"GSB=\" +Utils.ConvertArrayToString(gw_gewaesserschutzbereich.Results.bereich)"
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "GW-prov.Grundwasserschutzzone",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "gw_prov_grundwasserschutzzone.QueryName == \"GW-prov.Grundwasserschutzzone\" && Utils.ResultExists(gw_prov_grundwasserschutzzone.Results.bezeichnung)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"prov. GWZ=\" +Utils.ConvertArrayToString(gw_prov_grundwasserschutzzone.Results.bezeichnung)"
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "GW-Fassung",
+        "Operator":  "Or",
+        "Rules": [
+          {
+            "RuleName": "count",
+            "RuleExpressionType": "LambdaExpression",
+            "Expression": "gw_fassung.QueryName == \"GW-Fassung\" && Utils.ResultExists(gw_fassung.Results.count)",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "Utils.ConvertArrayToString(gw_fassung.Results.count)"
+                }
+              }
+            }
+          },
+          {
+            "RuleName": "klnr",
+            "RuleExpressionType": "LambdaExpression",
+            "Expression": "gw_fassung.QueryName == \"GW-Fassung\" && Utils.ResultExists(gw_fassung.Results.klnr)",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "\"GWA=\" + Utils.ConvertArrayToString(gw_fassung.Results.klnr)"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "RuleName": "GW-Messstelle",
+        "Operator": "Or",
+        "Rules": [
+          {
+            "RuleName": "count",
+            "RuleExpressionType": "LambdaExpression",
+            "Expression": "gw_messstelle.QueryName == \"GW-Messstelle\" && Utils.ResultExists(gw_messstelle.Results.count)",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "Utils.ConvertArrayToString(gw_messstelle.Results.count)"
+                }
+              }
+            }
+          },
+          {
+            "RuleName": "aufschlussnr",
+            "RuleExpressionType": "LambdaExpression",
+            "Expression": "gw_messstelle.QueryName == \"GW-Messstelle\" && Utils.ResultExists(gw_messstelle.Results.aufschlussnr)",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "\"GWA-M=\" + Utils.ConvertArrayToString(gw_messstelle.Results.aufschlussnr)"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "RuleName": "Abwasserbewilligung",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "abwasserbewilligung.QueryName == \"Abwasserbewilligung\" && Utils.ResultExists(abwasserbewilligung.Results.abwsel)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "Utils.ConvertArrayToString(abwasserbewilligung.Results.abwsel)"
+            }
+          }
+        }
+      }
+    ]
+  }
+]

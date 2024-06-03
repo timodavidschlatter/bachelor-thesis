@@ -1,0 +1,6 @@
+{
+  "id": 8,
+  "name": "Denkmalschutz Nachbarparzelle",
+  "queryPostGis": "_query_",
+  "queryFelder": "Objektname, Grundstücknummer"
+}

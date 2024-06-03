@@ -1,0 +1,6 @@
+{
+  "id": 15,
+  "name": "GW-Grundwasserschutzzone",
+  "queryPostGis": "_query_",
+  "queryFelder": "Bezeichnung, Name"
+}

@@ -1,0 +1,6 @@
+{
+  "id": 32,
+  "name": "Denkmalschutz KGS",
+  "queryPostGis": "_query_",
+  "queryFelder": "KGS"
+}

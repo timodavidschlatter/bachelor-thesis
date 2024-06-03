@@ -1,0 +1,6 @@
+{
+  "id": 43,
+  "name": "LZE-NL-Grundnutzung",
+  "queryPostGis": "_query_",
+  "queryFelder": "Wert, Kommunale Bezeichnung, Zweckbestimmung, Zusatzbestimmung, Kantonale Bezeichnung, Zugehörigkeit, kantonaler Code"
+}

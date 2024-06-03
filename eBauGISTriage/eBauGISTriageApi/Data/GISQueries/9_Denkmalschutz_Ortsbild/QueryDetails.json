@@ -1,0 +1,6 @@
+{
+  "id": 9,
+  "name": "Denkmalschutz Ortsbild",
+  "queryPostGis": "_query_",
+  "queryFelder": "Ortsbildschutzzone"
+}

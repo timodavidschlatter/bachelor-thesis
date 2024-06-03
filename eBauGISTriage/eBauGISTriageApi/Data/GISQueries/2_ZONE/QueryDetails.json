@@ -1,0 +1,6 @@
+{
+  "id": 2,
+  "name": "ZONE",
+  "queryPostGis": "_query_",
+  "queryFelder": "Zone Kantonal, Zone Kommunal, Status"
+}

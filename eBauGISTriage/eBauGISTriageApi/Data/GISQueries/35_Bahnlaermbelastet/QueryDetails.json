@@ -1,0 +1,6 @@
+{
+  "id": 35,
+  "name": "Bahnlaermbelastet",
+  "queryPostGis": "_query_",
+  "queryFelder": "BLB, Bemerkung, Stand"
+}

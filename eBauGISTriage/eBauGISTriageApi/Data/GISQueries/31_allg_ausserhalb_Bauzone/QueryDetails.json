@@ -1,0 +1,6 @@
+{
+  "id": 31,
+  "name": "allg. ausserhalb Bauzone",
+  "queryPostGis": "_query_",
+  "queryFelder": "ABZ"
+}

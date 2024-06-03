@@ -1,0 +1,6 @@
+{
+  "id": 39,
+  "name": "LZE-NL-Landwirtschaftszone",
+  "queryPostGis": "_query_",
+  "queryFelder": "Wert, kommunale Bez., Zweckbestimmung, Zusatzbezeichnung, kantonale Bez., Zugehoerigkeit, kantonaler Code"
+}

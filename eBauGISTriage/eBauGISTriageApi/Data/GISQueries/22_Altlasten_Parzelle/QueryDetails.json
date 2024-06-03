@@ -1,0 +1,6 @@
+{
+  "id": 22,
+  "name": "Altlasten Parzelle",
+  "queryPostGis": "_query_",
+  "queryFelder": "Altlast P"
+}

@@ -1,0 +1,6 @@
+{
+  "id": 60,
+  "name": "LZE-LE_Relevant",
+  "queryPostGis": "_query_",
+  "queryFelder": "Kommunale Bezeichnung, Zweckbestimmung, Zusatzbezeichnung, Kantonale Bezeichnung, Zugehörigkeit"
+}

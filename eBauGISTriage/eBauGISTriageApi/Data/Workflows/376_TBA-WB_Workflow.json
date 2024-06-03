@@ -1,0 +1,20 @@
+[
+  {
+    "WorkflowName": "376_TBA-WB",
+    "Rules": [
+      {
+        "RuleName": "Gewässer",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "gewässer.QueryName == \"Gewässer\" && Utils.ResultExists(gewässer.Results.gewässer)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"Gewässer =\" + Utils.ConvertArrayToString(gewässer.Results.gewässer)"
+            }
+          }
+        }
+      }
+    ]
+  }
+]

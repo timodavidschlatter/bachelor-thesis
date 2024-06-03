@@ -1,0 +1,7 @@
+SELECT 
+    ws.ART 
+FROM 
+    WA_PGS.V_BGTRIAGE_GWS_BEREICH ws  
+WHERE 
+    ST_WITHIN(ST_POINTFROMTEXT('POINT (xxx yyy)',2056), ws.geom)
+;

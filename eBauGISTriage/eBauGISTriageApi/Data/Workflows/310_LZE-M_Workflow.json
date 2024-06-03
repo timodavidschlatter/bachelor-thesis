@@ -1,0 +1,33 @@
+[
+  {
+    "WorkflowName": "310_LZE-M",
+    "Rules": [
+      {
+        "RuleName": "LZE-LE_Ausserhalb",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "lze_le_ausserhalb.QueryName == \"LZE-LE_Ausserhalb\" && Utils.ResultExists(lze_le_ausserhalb.Results.kant_bezeichnung)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"ZPL - \" + Utils.ConvertArrayToString(lze_le_ausserhalb.Results.kant_bezeichnung)"
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "LZE-LE_Relevant",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "lze_le_relevant.QueryName == \"LZE-LE_Relevant\" && Utils.ResultExists(lze_le_relevant.Results.kant_bezeichnung)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"ZPS - \" + Utils.ConvertArrayToString(lze_le_relevant.Results.kant_bezeichnung)"
+            }
+          }
+        }
+      }
+    ]
+  }
+]

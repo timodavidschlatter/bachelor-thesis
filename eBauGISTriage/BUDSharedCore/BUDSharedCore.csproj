@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Company>Kantonale Verwaltung BL</Company>
+    <Copyright>Copyright © Kantonale Verwaltung BL 2021</Copyright>
+    <Description>Library with base classes and helpers for systems build for .net core by "Bau &amp; Umweltschutz Direktion Basellandschaft"</Description>
+    <Authors>BUD-IT</Authors>
+    <Configurations>Debug;Release;Test</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.10" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" />
+    <PackageReference Include="NLog" Version="5.1.1" />
+    <PackageReference Include="Oracle.EntityFrameworkCore" Version="6.21.61" />
+  </ItemGroup>
+
+</Project>

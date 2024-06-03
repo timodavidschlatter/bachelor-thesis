@@ -1,0 +1,7 @@
+SELECT 
+    TYP || ', ' || BELASTUNG as Typ_Bel 
+FROM
+    BS_KANT.V_STANDORT_BG_TRIAGE
+WHERE
+    ST_WITHIN(ST_POINTFROMTEXT('POINT(xxx yyy)',2056), geom)
+;

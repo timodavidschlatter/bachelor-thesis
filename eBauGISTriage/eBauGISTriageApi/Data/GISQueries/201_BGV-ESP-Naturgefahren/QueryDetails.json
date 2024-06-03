@@ -1,0 +1,6 @@
+{
+  "id": 201,
+  "name": "BGV-ESP-Naturgefahren",
+  "queryPostGis": "_query_",
+  "queryFelder": "Wert"
+}

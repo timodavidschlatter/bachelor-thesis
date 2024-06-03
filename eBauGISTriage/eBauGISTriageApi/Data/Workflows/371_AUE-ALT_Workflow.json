@@ -1,0 +1,20 @@
+[
+  {
+    "WorkflowName": "371_AUE-ALT",
+    "Rules": [
+      {
+        "RuleName": "Altlasten Parzelle",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "altlasten_parzelle.QueryName == \"Altlasten Parzelle\"",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"Altlast Parzelle: \" +Utils.ConvertArrayToString(altlasten_parzelle.Results.typ_bel)"
+            }
+          }
+        }
+      }
+    ]
+  }
+]

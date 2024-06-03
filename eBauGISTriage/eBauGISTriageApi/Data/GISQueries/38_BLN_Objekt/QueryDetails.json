@@ -1,0 +1,6 @@
+{
+  "id": 38,
+  "name": "BLN Objekt",
+  "queryPostGis": "_query_",
+  "queryFelder": "Objektnummer, Objektname, Version"
+}

@@ -1,0 +1,6 @@
+{
+  "id": 74,
+  "name": "Abwasserbewilligung",
+  "queryPostGis": "_query_",
+  "queryFelder": "ABWSEL, Bewilligungsnummer, Bewilligungsdatum, Projektbezeichnung"
+}

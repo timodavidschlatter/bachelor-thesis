@@ -1,0 +1,11 @@
+{
+    "id": "331",
+    "name": "eBau GIS-Triage",
+    "path": "ebaugistriage",
+    "version": "0.0.1",
+    "when": "21.01.2022 17:37",
+    "who": "Timo Schlatter",
+    "desc": "Web service für das Ausführen der GIS-Triage",
+    "wiki": "https://git.bl.ch/bud-it/ebaugistriage/-/wikis/home",
+    "releasenotes" : "https://git.bl.ch/bud-it/ebaugistriage/-/releases"
+}

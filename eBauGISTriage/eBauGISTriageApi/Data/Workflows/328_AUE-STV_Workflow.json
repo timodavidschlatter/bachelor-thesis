@@ -1,0 +1,52 @@
+[
+  {
+    "WorkflowName": "328_AUE-STV",
+    "Rules": [
+      {
+        "RuleName": "Störfallbetriebe",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "StFV",
+            "RuleExpressionType": "LambdaExpression",
+            "Expression": "baugesuch_gebauedetyp_id == (210 || 212 || 238) && stfv.QueryName == \"StFV\" && Utils.ResultExists(stfv.Results.distance) && stfv.Results.distance[0] < 120",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "\"innerh. Perimeter: \" + Utils.ConvertArrayToString(stfv.Results.distance[0])"
+                }
+              }
+            }
+          },
+          {
+            "RuleName": "Fabrikanlagen",
+            "RuleExpressionType": "LambdaExpression",
+            "Expression": "baugesuch_gebauedetyp_id == 220",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "\"Fabrikanlagen\""
+                }
+              }
+            }
+          },
+          {
+            "RuleName": "ZONE",
+            "RuleExpressionType": "LambdaExpression",
+            "Expression": "baugesuch_gebauedetyp_id == 216 && zone.QueryName == \"ZONE\" && Utils.ResultExists(zone.Results.kant_bezeichnung)",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "\"Um-/Anbauten Zone: \" + Utils.ConvertArrayToString(zone.Results.kant_bezeichnung[0])"
+                }
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

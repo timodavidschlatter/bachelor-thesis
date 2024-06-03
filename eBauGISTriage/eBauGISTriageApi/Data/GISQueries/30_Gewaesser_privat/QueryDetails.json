@@ -1,0 +1,6 @@
+{
+  "id": 30,
+  "name": "Gewässer privat",
+  "queryPostGis": "_query_",
+  "queryFelder": "Gewässer, Besitzer, Art, Verlauf"
+}

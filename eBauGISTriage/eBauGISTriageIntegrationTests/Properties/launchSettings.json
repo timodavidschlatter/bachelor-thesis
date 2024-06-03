@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "eBauGISTriageIntegrationTests": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:60857;http://localhost:60858"
+    }
+  }
+}

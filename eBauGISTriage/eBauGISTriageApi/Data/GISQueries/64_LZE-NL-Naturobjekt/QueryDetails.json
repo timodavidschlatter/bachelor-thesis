@@ -1,0 +1,6 @@
+{
+  "id": 64,
+  "name": "LZE-NL-Naturobjekt",
+  "queryPostGis": "_query_",
+  "queryFelder": "Wert, Kommunale Bezeichnung, Zusatzbezeichnung, Kantonale Bezeichnung"
+}

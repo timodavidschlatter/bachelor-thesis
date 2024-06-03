@@ -1,0 +1,6 @@
+{
+  "id": 51,
+  "name": "SRH-Hafenbahn",
+  "queryPostGis": "_query_",
+  "queryFelder": "Wert"
+}

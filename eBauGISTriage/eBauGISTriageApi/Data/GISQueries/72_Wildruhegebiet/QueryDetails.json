@@ -1,0 +1,6 @@
+{
+  "id": 72,
+  "name": "Wildruhegebiet",
+  "queryPostGis": "_query_",
+  "queryFelder": "WRG"
+}

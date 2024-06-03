@@ -1,0 +1,6 @@
+{
+  "id": 17,
+  "name": "Wärmeverbund",
+  "queryPostGis": "_query_",
+  "queryFelder": "WV-Name"
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "WorkflowName": "405_LHA-NIS",
+    "Rules": [
+      {
+        "RuleName": "Mobilfunkantennen",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "mobilfunkantennen.QueryName == \"Mobilfunkantennen\" && Utils.ResultExists(mobilfunkantennen.Results.site_id)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"innerh. Strahlungsperimeter: \" + Utils.ConvertArrayToString(mobilfunkantennen.Results.site_id)"
+            }
+          }
+        }
+      }
+    ]
+  }
+]

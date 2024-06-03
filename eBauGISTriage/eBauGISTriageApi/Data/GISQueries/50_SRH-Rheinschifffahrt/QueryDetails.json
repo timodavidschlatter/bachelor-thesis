@@ -1,0 +1,6 @@
+{
+  "id": 50,
+  "name": "SRH-Rheinschifffahrt",
+  "queryPostGis": "_query_",
+  "queryFelder": "Gewässername, Gewässernummer"
+}

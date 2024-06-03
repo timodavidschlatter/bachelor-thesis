@@ -1,0 +1,6 @@
+{
+  "id": 19,
+  "name": "Teilzonenplan, Quartierplan",
+  "queryPostGis": "_query_",
+  "queryFelder": "Zweckbestimmung, RRB Nr., RRB Datum, Inventarnummer"
+}

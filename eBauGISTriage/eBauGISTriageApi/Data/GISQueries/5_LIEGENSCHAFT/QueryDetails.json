@@ -1,0 +1,6 @@
+{
+  "id": 5,
+  "name": "LIEGENSCHAFT",
+  "queryPostGis": "_query_",
+  "queryFelder": "Fläche, EGRID"
+}

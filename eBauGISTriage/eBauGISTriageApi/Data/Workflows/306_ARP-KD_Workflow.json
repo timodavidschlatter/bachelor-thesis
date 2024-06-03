@@ -1,0 +1,117 @@
+[
+  {
+    "WorkflowName": "306_ARP-KD",
+    "Rules": [
+      {
+        "RuleName": "Denkmal",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Denkmalschutz-Objekt",
+            "RuleExpressionType": "LambdaExpression",
+            "Expression": "denkmalschutz_objekt.QueryName == \"Denkmalschutz-Objekt\" && Utils.ResultExists(denkmalschutz_objekt.Results.distance) && Utils.ParseIntegerJToken(denkmalschutz_objekt.Results.distance[0]) < 70",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "\"Distanz: \" + Utils.ConvertArrayToString(denkmalschutz_objekt.Results.distance)"
+                }
+              }
+            }
+          },
+          {
+            "RuleName": "Denkmalschutz Nachbarparzelle",
+            "RuleExpressionType": "LambdaExpression",
+            "Expression": "denkmalschutz_nachbarparzelle.QueryName == \"Denkmalschutz Nachbarparzelle\" && Utils.ResultExists(denkmalschutz_nachbarparzelle.Results.nummer)",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "\"NachbarGst: \" + denkmalschutz_nachbarparzelle.Results.nummer[0]"
+                }
+              }
+            }
+          },
+          {
+            "RuleName": "Denkmalschutz Bauinventar",
+            "RuleExpressionType": "LambdaExpression",
+            "Expression": "denkmalschutz_bauinventar.QueryName == \"Denkmalschutz Bauinventar\" && Utils.ResultExists(denkmalschutz_bauinventar.Results.objekttyp)",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "\"Bauinventar: \" + denkmalschutz_bauinventar.Results.objekttyp[0]"
+                }
+              }
+            }
+          },
+          {
+            "RuleName": "Denkmalschutz Ausserorts",
+            "RuleExpressionType": "LambdaExpression",
+            "Expression": "denkmalschutz_ausserorts.QueryName == \"Denkmalschutz Ausserorts\" && Utils.ResultExists(denkmalschutz_ausserorts.Results.distance) && Utils.ParseIntegerJToken(denkmalschutz_ausserorts.Results.distance[0]) < 210",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "\"Ausserorts Dist.: \" + denkmalschutz_ausserorts.Results.distance[0]"
+                }
+              }
+            }
+          },
+          {
+            "RuleName": "Denkmalschutz Ortsbild",
+            "RuleExpressionType": "LambdaExpression",
+            "Expression": "denkmalschutz_ortsbild.QueryName == \"Denkmalschutz Ortsbild\" && Utils.ResultExists(denkmalschutz_ortsbild.Results.geom)",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "\"Ortsbildschutz: \" + denkmalschutz_ortsbild.Results.geom[0]"
+                }
+              }
+            }
+          },
+          {
+            "RuleName": "Denkmalschutz KGS",
+            "RuleExpressionType": "LambdaExpression",
+            "Expression": "denkmalschutz_kgs.QueryName == \"Denkmalschutz KGS\" && Utils.ResultExists(denkmalschutz_kgs.Results.kgs)",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "\"KGS Prüfung Solaranlage: \" + denkmalschutz_kgs.Results.kgs[0]"
+                }
+              }
+            }
+          },
+          {
+            "RuleName": "Denkmalschutz ISOS A",
+            "RuleExpressionType": "LambdaExpression",
+            "Expression": "denkmalschutz_isos_a.QueryName == \"Denkmalschutz ISOS A\" && Utils.ResultExists(denkmalschutz_isos_a.Results.isosa)",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "\"ISOS A Prüfung Solaranlage: \" + denkmalschutz_isos_a.Results.isosa[0]"
+                }
+              }
+            }
+          },
+          {
+            "RuleName": "OeWA Zone",
+            "RuleExpressionType": "LambdaExpression",
+            "Expression": "oewa_zone.QueryName == \"OeWA Zone\" && Utils.ResultExists(oewa_zone.Results.oewa_zone)",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "\"OeWA-Zone: \" + oewa_zone.Results.oewa_zone[0]"
+                }
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

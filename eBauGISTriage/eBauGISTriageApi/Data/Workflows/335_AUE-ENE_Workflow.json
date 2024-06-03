@@ -1,0 +1,46 @@
+[
+  {
+    "WorkflowName": "335_AUE-ENE",
+    "Rules": [
+      {
+        "RuleName": "Wärmeverbund",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "wärmeverbund.QueryName == \"Wärmeverbund\"",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"innerhalb Wärmeverbund\""
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "Teilzonenplan, Quartierplan",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "teilzonenplan__quartierplan.QueryName == \"Teilzonenplan, Quartierplan\" && Utils.ResultExists(teilzonenplan__quartierplan.Results.zweckbestimmung)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "Utils.ConvertArrayToString(teilzonenplan__quartierplan.Results.zweckbestimmung)"
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "ZONE",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "zone.QueryName == \"ZONE\" && Utils.CheckDictionaryValuesStartWith(zone.Results, \"K\")",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"Kernzone\""
+            }
+          }
+        }
+      }
+    ]
+  }
+]

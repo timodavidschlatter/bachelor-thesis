@@ -1,0 +1,6 @@
+{
+  "id": 37,
+  "name": "Vorranggebiet Landschaft",
+  "queryPostGis": "_query_",
+  "queryFelder": "Flurname, Beschlussdatum"
+}

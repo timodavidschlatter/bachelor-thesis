@@ -1,0 +1,6 @@
+{
+  "id": 61,
+  "name": "GW-Mittelwasser",
+  "queryPostGis": "_query_",
+  "queryFelder": "Hoehe"
+}

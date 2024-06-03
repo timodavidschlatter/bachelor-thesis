@@ -1,0 +1,6 @@
+{
+  "id": 68,
+  "name": "Bahnvibra2belastet",
+  "queryPostGis": "_query_",
+  "queryFelder": "BEL, Bemerkung, Stand"
+}

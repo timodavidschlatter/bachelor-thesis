@@ -1,0 +1,6 @@
+{
+  "id": 202,
+  "name": "BIT-NG-Naturgefahren",
+  "queryPostGis": "_query_",
+  "queryFelder": "Wert"
+}

@@ -1,0 +1,6 @@
+{
+  "id": 12,
+  "name": "OeWA Zone",
+  "queryPostGis": "_query_",
+  "queryFelder": "OeWA"
+}

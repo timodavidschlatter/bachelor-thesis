@@ -1,0 +1,85 @@
+[
+  {
+    "WorkflowName": "424_ARP-KP",
+    "Rules": [
+      {
+        "RuleName": "Gewaesserraum",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "gewaesserraum.QueryName == \"Gewaesserraum\" && Utils.ResultExists(gewaesserraum.Results.gwr)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "gewaesserraum.Results.gwr[0]"
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "Vorranggebiet Landschaft",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "vorranggebiet_landschaft.QueryName == \"Vorranggebiet Landschaft\" && Utils.ResultExists(vorranggebiet_landschaft.Results.beschlussdatum)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"Vorranggebiet Landschaft\""
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "BLN Objekt",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "bln_objekt.QueryName == \"BLN Objekt\" && Utils.ResultExists(bln_objekt.Results.version)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"BLN Objekt\""
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "Bauzonenueberpruefung",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "bauzonenueberpruefung.QueryName == \"Bauzonenueberpruefung\"",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"Bauzonenüberprüfung\""
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "Wildtierkorridor",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "wildtierkorridor.QueryName == \"Wildtierkorridor\" && Utils.ResultExists(wildtierkorridor.Results.schneidet) && wildtierkorridor.Results.schneidet == true",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"Wildtierkorridor\""
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "FreiraumFliessgewaesser",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "freiraumfliessgewaesser.QueryName == \"FreiraumFliessgewaesser\" && Utils.ResultExists(freiraumfliessgewaesser.Results.ffgw)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "freiraumfliessgewaesser.Results.ffgw[0]"
+            }
+          }
+        }
+      }
+    ]
+  }
+]

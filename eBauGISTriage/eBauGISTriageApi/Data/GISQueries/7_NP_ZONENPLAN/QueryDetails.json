@@ -1,0 +1,6 @@
+{
+  "id": 7,
+  "name": "NP_ZONENPLAN",
+  "queryPostGis": "_query_",
+  "queryFelder": "Status, RRB Nr., RRB Datum, Inventarnummer"
+}

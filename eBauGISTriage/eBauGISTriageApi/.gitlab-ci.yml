@@ -1,0 +1,138 @@
+stages:
+  - pack
+  - deploy
+
+pack_staging:
+  stage: pack
+  only:
+    - tags  # the build process will only be started by git tag commits
+  script: |
+    $versionstr = "$env:CI_COMMIT_TAG.$env:CI_PIPELINE_IID"
+    $outpathpath = "$env:CI_PROJECT_DIR\build"
+    $storagepath = "$env:PUBLISH_PATH\$env:CI_COMMIT_TAG\$env:CI_ENVIRONMENT_NAME"
+    $buildscript = "$env:CI_PROJECT_DIR\BuildScripts\build_main.ps1"
+    $configurescript = "$env:CI_PROJECT_DIR\BuildScripts\configure_system.ps1"
+    $storescript = "$env:CI_PROJECT_DIR\BuildScripts\store_build.ps1"
+    
+    Write-Host "Build script:" $buildscript
+    Write-Host "Version:" $versionstr
+    Write-Host "Outpath:" $outpathpath
+    invoke-expression -Command "$buildscript $versionstr $outpathpath Test"
+
+    Write-Host "Configure script:" $configurescript
+    Write-Host "Identity Server URL:" $env:IDENTITYSERVERTEST_URL
+    Write-Host "IIS Server URL:" $env:IISTESTSERVER_URL
+    invoke-expression -Command "$configurescript $versionstr $outpathpath $env:IDENTITYSERVERTEST_URL $env:IISTESTSERVER_URL"
+
+    Write-Host "Store script:" $storescript
+    Write-Host "Storage path:" $storagepath
+    invoke-expression -Command "$storescript $outpathpath $storagepath true"
+    Write-Host "AppID:" $env:APPID
+    invoke-expression -Command "$storescript $env:CI_PROJECT_DIR\AngularApp\dist\$env:APPID $storagepath\wwwroot false"     
+  environment:
+    name: staging
+
+pack_prod:
+  stage: pack
+  only:
+    - tags  # the build process will only be started by git tag commits
+  script: |
+    $versionstr = "$env:CI_COMMIT_TAG.$env:CI_PIPELINE_IID"
+    $outpathpath = "$env:CI_PROJECT_DIR\build"
+    $storagepath = "$env:PUBLISH_PATH\$env:CI_COMMIT_TAG\$env:CI_ENVIRONMENT_NAME"
+    $buildscript = "$env:CI_PROJECT_DIR\BuildScripts\build_main.ps1"
+    $configurescript = "$env:CI_PROJECT_DIR\BuildScripts\configure_system.ps1"
+    $storescript = "$env:CI_PROJECT_DIR\BuildScripts\store_build.ps1"
+
+    Write-Host "Build script:" $buildscript
+    Write-Host "Version:" $versionstr
+    Write-Host "Outpath:" $outpathpath
+    invoke-expression -Command "$buildscript $versionstr $outpathpath Production"
+
+    Write-Host "Configure script:" $configurescript
+    Write-Host "Identity Server URL:" $env:IDENTITYSERVERTEST_URL
+    Write-Host "IIS Server URL:" $env:IISTESTSERVER_URL
+    invoke-expression -Command "$configurescript $versionstr $outpathpath $env:IDENTITYSERVERPROD_URL $env:IISPRODSERVER_URL"
+
+    Write-Host "Store script:" $storescript
+    Write-Host "Storage path:" $storagepath
+    invoke-expression -Command "$storescript $outpathpath $storagepath true"
+    Write-Host "AppID:" $env:APPID
+    invoke-expression -Command "$storescript $env:CI_PROJECT_DIR\AngularApp\dist\$env:APPID $storagepath\wwwroot false"     
+  environment:
+    name: production
+
+deploy_staging:
+  stage: deploy
+  only:
+    - tags  # the build process will only be started by git tag commits
+  script: |
+    $storagepath = "$env:PUBLISH_PATH\$env:CI_COMMIT_TAG\$env:CI_ENVIRONMENT_NAME"
+    $deployscript = "$env:CI_PROJECT_DIR\BuildScripts\deploy_build.ps1"
+    $publishinfoscript = "$env:CI_PROJECT_DIR\BuildScripts\publish_info.ps1"
+
+    Write-Host "Deploy script:" $deployscript
+    Write-Host "Storage path:" $storagepath  
+    Write-Host "WinSCP location:" $env:WINSCP_PATH  
+    Write-Host "WinSCP pwsh7 Dll location:" $env:WINSCP_PATH_PWSH7  
+    Write-Host "Ftp path:" $env:FTPPATH  
+    invoke-expression -Command "$deployscript $storagepath\ebaugistriage $env:WINSCP_PATH $env:WINSCP_PATH_PWSH7 $env:FTPTESTSERVER $env:FTPPATH"
+
+    Write-Host "Deploy info script:" $publishinfoscript
+    invoke-expression -Command "$publishinfoscript $env:WINSCP_PATH $env:WINSCP_PATH_PWSH7 $env:FTPTESTSERVER"
+  environment:
+    name: staging
+  when: manual
+
+deploy_prod:
+  stage: deploy
+  only:
+    - tags  # the build process will only be started by git tag commits
+  script: |
+    $storagepath = "$env:PUBLISH_PATH\$env:CI_COMMIT_TAG\$env:CI_ENVIRONMENT_NAME"
+    $deployscript = "$env:CI_PROJECT_DIR\BuildScripts\deploy_build.ps1"
+    $publishinfoscript = "$env:CI_PROJECT_DIR\BuildScripts\publish_info.ps1"
+
+    Write-Host "Deploy script:" $deployscript
+    Write-Host "Storage path:" $storagepath  
+    Write-Host "WinSCP location:" $env:WINSCP_PATH  
+    Write-Host "WinSCP pwsh7 Dll location:" $env:WINSCP_PATH_PWSH7  
+    Write-Host "Ftp path:" $env:FTPPATH  
+    invoke-expression -Command "$deployscript $storagepath\ebaugistriage $env:WINSCP_PATH $env:WINSCP_PATH_PWSH7 $env:FTPPRODSERVER $env:FTPPATH"
+    
+    Write-Host "Deploy info script:" $publishinfoscript
+    invoke-expression -Command "$publishinfoscript $env:WINSCP_PATH $env:WINSCP_PATH_PWSH7 $env:FTPTESTSERVER"
+  environment:
+    name: production
+  when: manual
+
+deploy_services_staging:
+  stage: deploy
+  only:
+    - tags  # the build process will only be started by git tag commits
+  script: |
+    $storagepath = "$env:PUBLISH_PATH\$env:CI_COMMIT_TAG\$env:CI_ENVIRONMENT_NAME"
+    $deployscript = "$env:CI_PROJECT_DIR\BuildScripts\deploy_services.ps1"
+ 
+    Write-Host "Deploy script:" $deployscript
+    Write-Host "Storage path:" $storagepath  
+    invoke-expression -Command "$deployscript $storagepath $env:SERVICE_ROOT_DIR 'Test'"
+
+  environment:
+    name: staging
+  when: manual
+
+deploy_services_prod:
+  stage: deploy
+  only:
+    - tags  # the build process will only be started by git tag commits
+  script: |
+    $storagepath = "$env:PUBLISH_PATH\$env:CI_COMMIT_TAG\$env:CI_ENVIRONMENT_NAME"
+    $deployscript = "$env:CI_PROJECT_DIR\BuildScripts\deploy_services.ps1"
+ 
+    Write-Host "Deploy script:" $deployscript
+    Write-Host "Storage path:" $storagepath  
+    invoke-expression -Command "$deployscript $storagepath $env:SERVICE_ROOT_DIR 'Prod'"
+  environment:
+    name: production
+  when: manual

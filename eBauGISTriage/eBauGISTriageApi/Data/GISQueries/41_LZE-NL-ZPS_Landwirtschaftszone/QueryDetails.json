@@ -1,0 +1,6 @@
+{
+  "id": 41,
+  "name": "LZE-NL-ZPS_Landwirtschaftszone",
+  "queryPostGis": "_query_",
+  "queryFelder": "Wert"
+}

@@ -1,0 +1,33 @@
+[
+  {
+    "WorkflowName": "372_AUE-STC",
+    "Rules": [
+      {
+        "RuleName": "Altlasten",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "altlasten.QueryName == \"Altlasten\"",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"Altlast: \" +Utils.ConvertArrayToString(altlasten.Results.typ_bel)"
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "Altlasten Parzelle",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "altlasten_parzelle.QueryName == \"Altlasten Parzelle\"",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"Altlast Parzelle: \" +Utils.ConvertArrayToString(altlasten_parzelle.Results.typ_bel)"
+            }
+          }
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "id": 36,
+  "name": "Strassenlaermbelastet",
+  "queryPostGis": "_query_",
+  "queryFelder": "SLB, Bemerkung, Stand"
+}

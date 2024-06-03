@@ -1,0 +1,65 @@
+[
+  {
+    "WorkflowName": "437_AFW-WJF",
+    "Rules": [
+      {
+        "RuleName": "Wildtiere, Jagd und Fischerei",
+        "Operator": "OrElse",
+        "Rules": [
+          {
+            "RuleName": "Wildtierkorridor",
+            "RuleExpressionType": "LambdaExpression",
+            "Expression": "wildtierkorridor.QueryName == \"Wildtierkorridor\" && Utils.ResultExists(wildtierkorridor.Results.wtk)",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "wildtierkorridor.Results.wtk[0]"
+                }
+              }
+            }
+          },
+          {
+            "RuleName": "Wildruhegebiet",
+            "RuleExpressionType": "LambdaExpression",
+            "Expression": "wildruhegebiet.QueryName == \"Wildruhegebiet\" && Utils.ResultExists(wildruhegebiet.Results.wrg)",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "wildruhegebiet.Results.wrg[0]"
+                }
+              }
+            }
+          },
+          {
+            "RuleName": "Wildschutzgebiet",
+            "RuleExpressionType": "LambdaExpression",
+            "Expression": "wildschutzgebiet.QueryName == \"Wildschutzgebiet\" && Utils.ResultExists(wildschutzgebiet.Results.wsg)",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "wildschutzgebiet.Results.wsg[0]"
+                }
+              }
+            }
+          },
+          {
+            "RuleName": "Gewaesserraum",
+            "RuleExpressionType": "LambdaExpression",
+            "Expression": "gewaesserraum.QueryName == \"Gewaesserraum\" && Utils.ResultExists(gewaesserraum.Results.gwr)",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "gewaesserraum.Results.gwr[0]"
+                }
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "id": 4,
+  "name": "ZPL_ZPS",
+  "queryPostGis": "_query_",
+  "queryFelder": "Zugehörigkeit"
+}

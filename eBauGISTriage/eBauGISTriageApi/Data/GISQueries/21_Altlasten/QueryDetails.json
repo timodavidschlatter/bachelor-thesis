@@ -1,0 +1,6 @@
+{
+  "id": 21,
+  "name": "Altlasten",
+  "queryPostGis": "_query_",
+  "queryFelder": "Altlast"
+}

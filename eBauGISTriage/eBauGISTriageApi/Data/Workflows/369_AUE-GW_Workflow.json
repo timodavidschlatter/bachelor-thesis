@@ -1,0 +1,125 @@
+[
+  {
+    "WorkflowName": "369_AUE-GW",
+    "Rules": [
+      {
+        "RuleName": "GW-Grundwasserschutzzone",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "gw_grundwasserschutzzone.QueryName == \"GW-Grundwasserschutzzone\" && Utils.ResultExists(gw_grundwasserschutzzone.Results.art_text)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"GWZ=\" + gw_grundwasserschutzzone.Results.art_text[0]"
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "GW-Gewaesserschutzbereich",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "gw_gewaesserschutzbereich.QueryName == \"GW-Gewaesserschutzbereich\" && Utils.ResultExists(gw_gewaesserschutzbereich.Results.art)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"GSB=\" + gw_gewaesserschutzbereich.Results.art[0]"
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "GW-prov.Grundwasserschutzzone",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "gw_prov_grundwasserschutzzone.QueryName == \"GW-prov.Grundwasserschutzzone\" && Utils.ResultExists(gw_prov_grundwasserschutzzone.Results.art_text)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"prov. GWZ=\" + gw_prov_grundwasserschutzzone.Results.art_text[0]"
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "25_GW-Fassung",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "gw_fassung.QueryName == \"GW-Fassung\" && Utils.ResultExists(gw_fassung.Results.klnr)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"GWA=\" + Utils.ConvertArrayToString(gw_fassung.Results.klnr)"
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "26_GW-Fassung",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "gw_fassung.QueryName == \"GW-Fassung\" && Utils.ResultExists(gw_fassung.Results.anzahl)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "gw_fassung.Results.anzahl[0]"
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "63_GW-Messstelle",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "gw_messstelle.QueryName == \"GW-Messstelle\" && Utils.ResultExists(gw_messstelle.Results.anzahl)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"(\" + gw_messstelle.Results.anzahl[0] + \")\""
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "62_GW-Messstelle",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "gw_messstelle.QueryName == \"GW-Messstelle\" && Utils.ResultExists(gw_messstelle.Results.aufschlussnr)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"GWA-M=\" + Utils.ConvertArrayToString(gw_messstelle.Results.aufschlussnr)"
+            }
+          }
+        }
+
+      },
+      {
+        "RuleName": "GW-Mittelwasser",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "gw_mittelwasser.QueryName == \"GW-Mittelwasser\" && Utils.ResultExists(gw_mittelwasser.Results.hoehe)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"GWM=\" + gw_mittelwasser.Results.hoehe[0]"
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "Altlasten Parzelle",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "altlasten_parzelle.QueryName == \"Altlasten Parzelle\" && Utils.ResultExists(altlasten_parzelle.Results.typ_bel)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"Altlast=\" + altlasten_parzelle.Results.typ_bel[0]"
+            }
+          }
+        }
+      }
+    ]
+  }
+]

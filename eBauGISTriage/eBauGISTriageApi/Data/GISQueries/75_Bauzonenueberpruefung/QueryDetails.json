@@ -1,0 +1,6 @@
+{
+  "id": 75,
+  "name": "Bauzonenueberpruefung",
+  "queryPostGis": "_query_",
+  "queryFelder": "Wert"
+}

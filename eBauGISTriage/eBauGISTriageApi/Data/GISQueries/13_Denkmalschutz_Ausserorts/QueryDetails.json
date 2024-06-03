@@ -1,0 +1,6 @@
+{
+  "id": 13,
+  "name": "Denkmalschutz Ausserorts",
+  "queryPostGis": "_query_",
+  "queryFelder": "Distanz"
+}

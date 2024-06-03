@@ -1,0 +1,6 @@
+{
+  "id": 73,
+  "name": "Wildschutzgebiet",
+  "queryPostGis": "_query_",
+  "queryFelder": "WSG"
+}

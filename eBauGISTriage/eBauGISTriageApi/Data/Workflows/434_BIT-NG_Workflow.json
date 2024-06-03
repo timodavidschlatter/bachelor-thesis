@@ -1,0 +1,20 @@
+[
+  {
+    "WorkflowName": "434_BIT-NG",
+    "Rules": [
+      {
+        "RuleName": "BIT-NG-Naturgefahren",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "bit_ng_naturgefahren.QueryName == \"BIT-NG-Naturgefahren\" && baugesuch_prj_ort1 != \"Reinach\"",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "Utils.ConvertArrayToString(bit_ng_naturgefahren.Results.resvalue) "
+            }
+          }
+        }
+      }
+    ]
+  }
+]

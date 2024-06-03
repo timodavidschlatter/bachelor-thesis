@@ -1,0 +1,6 @@
+{
+  "id": 23,
+  "name": "StFV",
+  "queryPostGis": "_query_",
+  "queryFelder": "Betrieb, Distanz"
+}

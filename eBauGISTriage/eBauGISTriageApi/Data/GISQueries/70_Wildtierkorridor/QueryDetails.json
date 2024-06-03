@@ -1,0 +1,6 @@
+{
+  "id": 70,
+  "name": "Wildtierkorridor",
+  "queryPostGis": "_query_",
+  "queryFelder": "WTK, schneidet, Distanz"
+}

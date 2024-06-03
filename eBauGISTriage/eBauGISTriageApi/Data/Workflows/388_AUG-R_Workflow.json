@@ -1,0 +1,20 @@
+[
+  {
+    "WorkflowName": "388_AUG-R",
+    "Rules": [
+      {
+        "RuleName": "Augustaraurica",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "augustaraurica.QueryName == \"Augustaraurica\"",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "Utils.ConvertArrayToString(augustaraurica.Results.bezeichnung)"
+            }
+          }
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "WorkflowName": "425_BGV-ESP",
+    "Rules": [
+      {
+        "RuleName": "BGV-ESP-Naturgefahren",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "bgv_esp_naturgefahren.QueryName == \"BGV-ESP-Naturgefahren\" && Utils.ResultExists(bgv_esp_naturgefahren.Results.resvalue)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "bgv_esp_naturgefahren.Results.resvalue[0]"
+            }
+          }
+        }
+      }
+    ]
+  }
+]

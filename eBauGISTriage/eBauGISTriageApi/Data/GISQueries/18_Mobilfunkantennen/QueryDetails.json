@@ -1,0 +1,6 @@
+{
+  "id": 18,
+  "name": "Mobilfunkantennen",
+  "queryPostGis": "_query_",
+  "queryFelder": "Site, Perimeter, Distanz"
+}

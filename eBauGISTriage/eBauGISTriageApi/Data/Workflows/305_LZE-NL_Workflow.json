@@ -1,0 +1,142 @@
+[
+  {
+    "WorkflowName": "305_LZE-NL",
+    "Rules": [
+      {
+        "RuleName": "LZE-NL-Landwirtschaftszone",
+        "SuccessEvent": "ZPL",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "lze_nl_landwirtschaftszone.QueryName == \"LZE-NL-Landwirtschaftszone\" && Utils.ResultExists(lze_nl_landwirtschaftszone.Results.wert)"
+      },
+      {
+        "RuleName": "LZE-NL-ZPS_Landwirtschaftszone",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "lze_nl_zps_landwirtschaftszone.QueryName == \"LZE-NL-ZPS_Landwirtschaftszone\" && Utils.ResultExists(lze_nl_zps_landwirtschaftszone.Results.wert)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "lze_nl_zps_landwirtschaftszone.Results.wert[0]"
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "LZE-NL-Grundnutzung",
+        "Operator": "Or",
+        "Rules": [
+          {
+            "RuleName": "wert",
+            "Expression": "lze_nl_grundnutzung.QueryName == \"LZE-NL-Grundnutzung\" && Utils.ResultExists(lze_nl_grundnutzung.Results.wert)",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "lze_nl_grundnutzung.Results.wert[0]"
+                }
+              }
+            }
+          },
+          {
+            "RuleName": "kant_bezeichnung",
+            "Expression": "lze_nl_grundnutzung.QueryName == \"LZE-NL-Grundnutzung\" && Utils.ResultExists(lze_nl_grundnutzung.Results.kant_bezeichnung)",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "lze_nl_grundnutzung.Results.kant_bezeichnung[0]"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "RuleName": "LZE-NL-Bodenbedeckung",
+        "Operator": "Or",
+        "Rules": [
+          {
+            "RuleName": "wert",
+            "Expression": "lze_nl_bodenbedeckung.QueryName == \"LZE-NL-Bodenbedeckung\" && Utils.ResultExists(lze_nl_bodenbedeckung.Results.wert)",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "lze_nl_bodenbedeckung.Results.wert[0]"
+                }
+              }
+            }
+          },
+          {
+            "RuleName": "art",
+            "Expression": "lze_nl_bodenbedeckung.QueryName == \"LZE-NL-Bodenbedeckung\" && Utils.ResultExists(lze_nl_bodenbedeckung.Results.art)",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "lze_nl_bodenbedeckung.Results.art[0]"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "RuleName": "LZE-NL-Rheinhafen",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "lze_nl_rheinhafen.QueryName == \"LZE-NL-Rheinhafen\" && Utils.ResultExists(lze_nl_rheinhafen.Results.zweckbestimmung)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "lze_nl_rheinhafen.Results.zweckbestimmung[0]"
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "LZE-NL-Erdbockkäfer",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "lze_nl_erdbockkäfer.QueryName == \"LZE-NL-Erdbockkäfer\" && Utils.ResultExists(lze_nl_erdbockkäfer.Results.wert)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "lze_nl_erdbockkäfer.Results.wert[0]"
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "LZE-NL-Naturobjekt",
+        "Operator": "Or",
+        "Rules": [
+          {
+            "RuleName": "wert",
+            "Expression": "lze_nl_naturobjekt.QueryName == \"LZE-NL-Naturobjekt\" && Utils.ResultExists(lze_nl_naturobjekt.Results.wert)",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "\"NO = \" + lze_nl_naturobjekt.Results.wert[0]"
+                }
+              }
+            }
+          },
+          {
+            "RuleName": "kantonale_bezeichnung",
+            "Expression": "lze_nl_naturobjekt.QueryName == \"LZE-NL-Naturobjekt\" && Utils.ResultExists(lze_nl_naturobjekt.Results.kantonale_bezeichnung)",
+            "Actions": {
+              "OnSuccess": {
+                "Name": "OutputExpression",
+                "Context": {
+                  "Expression": "lze_nl_naturobjekt.Results.kantonale_bezeichnung[0]"
+                }
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

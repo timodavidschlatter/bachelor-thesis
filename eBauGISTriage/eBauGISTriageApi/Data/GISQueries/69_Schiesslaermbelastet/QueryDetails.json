@@ -1,0 +1,6 @@
+{
+  "id": 69,
+  "name": "Schiesslärmbelastet",
+  "queryPostGis": "_query_",
+  "queryFelder": "BEL, Bemerkung, Stand"
+}

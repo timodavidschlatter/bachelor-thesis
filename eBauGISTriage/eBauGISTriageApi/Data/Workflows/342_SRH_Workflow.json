@@ -1,0 +1,59 @@
+[
+  {
+    "WorkflowName": "342_SRH",
+    "Rules": [
+      {
+        "RuleName": "LZE-NL-Rheinhafen",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "lze_nl_rheinhafen.QueryName == \"LZE-NL-Rheinhafen\" && Utils.ResultExists(lze_nl_rheinhafen.Results.zweckbestimmung)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"KNP Rheinhäfen\""
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "SRH-Rheinschifffahrt",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "srh_rheinschifffahrt.QueryName == \"SRH-Rheinschifffahrt\" && Utils.ResultExists(srh_rheinschifffahrt.Results.gewässername)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"SRH - Rheinschifffahrt\""
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "SRH-Hafenbahn",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "srh_hafenbahn.QueryName == \"SRH-Hafenbahn\"",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"SRH - Hafenbahn\""
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "SRH-Auhafenstrasse",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "srh_auhafenstrasse.QueryName == \"SRH-Auhafenstrasse\"",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "Utils.ConvertArrayToString(srh_auhafenstrasse.Results.wert)"
+            }
+          }
+        }
+      }
+    ]
+  }
+]

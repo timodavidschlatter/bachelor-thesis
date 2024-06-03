@@ -1,0 +1,6 @@
+{
+  "id": 71,
+  "name": "FreiraumFliessgewaesser",
+  "queryPostGis": "_query_",
+  "queryFelder": "FFGW,Flurname,Art"
+}

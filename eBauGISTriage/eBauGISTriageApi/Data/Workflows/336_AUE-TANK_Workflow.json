@@ -1,0 +1,33 @@
+[
+  {
+    "WorkflowName": "336_AUE-TANK",
+    "Rules": [
+      {
+        "RuleName": "GW-Grundwasserschutzzone",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "gw_grundwasserschutzzone.QueryName == \"GW-Grundwasserschutzzone\" && Utils.ResultExists(gw_grundwasserschutzzone.Results.bezeichnung)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"GWZ=\" +Utils.ConvertArrayToString(gw_grundwasserschutzzone.Results.bezeichnung)"
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "GW-Gewaesserschutzbereich",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "gw_gewaesserschutzbereich.QueryName == \"GW-Gewaesserschutzbereich\" && Utils.ResultExists(gw_gewaesserschutzbereich.Results.bereich)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"GSB=\" +Utils.ConvertArrayToString(gw_gewaesserschutzbereich.Results.bereich)"
+            }
+          }
+        }
+      }
+    ]
+  }
+]

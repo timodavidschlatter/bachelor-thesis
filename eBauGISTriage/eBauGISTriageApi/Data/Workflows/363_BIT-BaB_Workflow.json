@@ -1,0 +1,20 @@
+[
+  {
+    "WorkflowName": "363_BIT-BaB",
+    "Rules": [
+      {
+        "RuleName": "allg. ausserhalb Bauzone",
+        "RuleExpressionType": "LambdaExpression",
+        "Expression": "allg__ausserhalb_bauzone.QueryName == \"allg. ausserhalb Bauzone\" && Utils.ResultExists(allg__ausserhalb_bauzone.Results.abz)",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "\"ausserhalb Bauzone\""
+            }
+          }
+        }
+      }
+    ]
+  }
+]
