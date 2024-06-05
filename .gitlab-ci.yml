@@ -1,0 +1,31 @@
+before_script:
+  - $scriptpath = "$env:CI_PROJECT_DIR\get_scripts.ps1"
+  - invoke-expression -Command "$scriptpath '0.0.3' $env:APITOKEN"
+
+include:
+  - local: '/eBauGISTriage/eBauGISTriageApi/.gitlab-ci.yml'
+ 
+#Stages  
+stages:
+#  - test
+  - pack
+  - deploy
+
+# Execute unit and integration tests
+# Code Source: https://docs.gitlab.com/ee/ci/testing/unit_test_report_examples.html#net
+# Test:
+#   stage: test
+#   only: 
+#     - tags
+#   script: |
+#     dotnet clean
+#     dotnet build
+#     dotnet test ./ebaugistriage/ --test-adapter-path:"./ebaugistriage/" --logger:"junit;LogFilePath=.\artifacts\{assembly}-test-result.xml;MethodFormat=Class;FailureBodyFormat=Verbose"
+#   artifacts:
+#     when: always
+#     paths: 
+#      - ./**/*test-result.xml
+#     reports:
+#       junit: 
+#        - ./**/*test-result.xml
+
