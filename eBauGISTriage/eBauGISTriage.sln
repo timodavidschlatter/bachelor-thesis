@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BUDSharedWebApiCore", "BUDSharedWebApiCore\BUDSharedWebApiCore.csproj", "{01BD1AB4-18CB-4AD1-BDB2-C1FE6E8D77F4}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eBauGISTriageApi", "eBauGISTriageApi\eBauGISTriageApi.csproj", "{F88CB37E-84CF-45B2-9446-93B20BC1176D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eBauGISTriageUnitTests", "eBauGISTriageTests\eBauGISTriageUnitTests.csproj", "{A7269582-9C03-40BD-B164-7786C1DFB414}"
@@ -18,12 +16,6 @@ Global
 		Test|Any CPU = Test|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{01BD1AB4-18CB-4AD1-BDB2-C1FE6E8D77F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{01BD1AB4-18CB-4AD1-BDB2-C1FE6E8D77F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{01BD1AB4-18CB-4AD1-BDB2-C1FE6E8D77F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{01BD1AB4-18CB-4AD1-BDB2-C1FE6E8D77F4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{01BD1AB4-18CB-4AD1-BDB2-C1FE6E8D77F4}.Test|Any CPU.ActiveCfg = Test|Any CPU
-		{01BD1AB4-18CB-4AD1-BDB2-C1FE6E8D77F4}.Test|Any CPU.Build.0 = Test|Any CPU
 		{F88CB37E-84CF-45B2-9446-93B20BC1176D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F88CB37E-84CF-45B2-9446-93B20BC1176D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F88CB37E-84CF-45B2-9446-93B20BC1176D}.Release|Any CPU.ActiveCfg = Release|Any CPU
