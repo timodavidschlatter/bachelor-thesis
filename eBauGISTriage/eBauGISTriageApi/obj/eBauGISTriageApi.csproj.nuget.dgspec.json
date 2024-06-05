@@ -1,0 +1,278 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/timoschlatter/Git/timodavidschlatter/bachelor-thesis/eBauGISTriage/eBauGISTriageApi/eBauGISTriageApi.csproj": {}
+  },
+  "projects": {
+    "/Users/timoschlatter/Git/timodavidschlatter/bachelor-thesis/eBauGISTriage/BUDSharedCore/BUDSharedCore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/timoschlatter/Git/timodavidschlatter/bachelor-thesis/eBauGISTriage/BUDSharedCore/BUDSharedCore.csproj",
+        "projectName": "BUDSharedCore",
+        "projectPath": "/Users/timoschlatter/Git/timodavidschlatter/bachelor-thesis/eBauGISTriage/BUDSharedCore/BUDSharedCore.csproj",
+        "packagesPath": "/Users/timoschlatter/.nuget/packages/",
+        "outputPath": "/Users/timoschlatter/Git/timodavidschlatter/bachelor-thesis/eBauGISTriage/BUDSharedCore/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/timoschlatter/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "NLog": {
+              "target": "Package",
+              "version": "[5.1.1, )"
+            },
+            "Oracle.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.21.61, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/timoschlatter/Git/timodavidschlatter/bachelor-thesis/eBauGISTriage/BUDSharedWebApiCore/BUDSharedWebApiCore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/timoschlatter/Git/timodavidschlatter/bachelor-thesis/eBauGISTriage/BUDSharedWebApiCore/BUDSharedWebApiCore.csproj",
+        "projectName": "BUDSharedWebApiCore",
+        "projectPath": "/Users/timoschlatter/Git/timodavidschlatter/bachelor-thesis/eBauGISTriage/BUDSharedWebApiCore/BUDSharedWebApiCore.csproj",
+        "packagesPath": "/Users/timoschlatter/.nuget/packages/",
+        "outputPath": "/Users/timoschlatter/Git/timodavidschlatter/bachelor-thesis/eBauGISTriage/BUDSharedWebApiCore/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/timoschlatter/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/timoschlatter/Git/timodavidschlatter/bachelor-thesis/eBauGISTriage/BUDSharedCore/BUDSharedCore.csproj": {
+                "projectPath": "/Users/timoschlatter/Git/timodavidschlatter/bachelor-thesis/eBauGISTriage/BUDSharedCore/BUDSharedCore.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "DevExtreme.AspNet.Data": {
+              "target": "Package",
+              "version": "[2.9.2, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "NSwag.Annotations": {
+              "target": "Package",
+              "version": "[13.18.2, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/timoschlatter/Git/timodavidschlatter/bachelor-thesis/eBauGISTriage/eBauGISTriageApi/eBauGISTriageApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/timoschlatter/Git/timodavidschlatter/bachelor-thesis/eBauGISTriage/eBauGISTriageApi/eBauGISTriageApi.csproj",
+        "projectName": "eBauGISTriageApi",
+        "projectPath": "/Users/timoschlatter/Git/timodavidschlatter/bachelor-thesis/eBauGISTriage/eBauGISTriageApi/eBauGISTriageApi.csproj",
+        "packagesPath": "/Users/timoschlatter/.nuget/packages/",
+        "outputPath": "/Users/timoschlatter/Git/timodavidschlatter/bachelor-thesis/eBauGISTriage/eBauGISTriageApi/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/timoschlatter/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/timoschlatter/Git/timodavidschlatter/bachelor-thesis/eBauGISTriage/BUDSharedWebApiCore/BUDSharedWebApiCore.csproj": {
+                "projectPath": "/Users/timoschlatter/Git/timodavidschlatter/bachelor-thesis/eBauGISTriage/BUDSharedWebApiCore/BUDSharedWebApiCore.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "GeoJSON.Net": {
+              "target": "Package",
+              "version": "[1.2.19, )"
+            },
+            "Hellang.Middleware.ProblemDetails": {
+              "target": "Package",
+              "version": "[6.5.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.15, )"
+            },
+            "Microsoft.Extensions.Configuration.UserSecrets": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.27.0, )"
+            },
+            "NLog.Web.AspNetCore": {
+              "target": "Package",
+              "version": "[5.2.3, )"
+            },
+            "NSwag.AspNetCore": {
+              "target": "Package",
+              "version": "[13.18.2, )"
+            },
+            "NSwag.Examples": {
+              "target": "Package",
+              "version": "[1.0.7, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[6.0.8, )"
+            },
+            "RulesEngine": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "Swashbuckle.AspNetCore.Filters": {
+              "target": "Package",
+              "version": "[7.0.6, )"
+            },
+            "System.IO.Abstractions": {
+              "target": "Package",
+              "version": "[19.2.26, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.27.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
